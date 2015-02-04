@@ -26,6 +26,7 @@ import java.util.List;
  * Displays a list of search results.
  */
 public class SearchFragment extends Fragment {
+    private final SearchResultsAdapter adapter = new SearchResultsAdapter();
     private final String searchUrl = "http://api.nsf.gov/services/v1/awards.json?keyword=";
 
     @Override
@@ -38,8 +39,8 @@ public class SearchFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.results_list);
-        recyclerView.setHasFixedSize(true); // Foreknowledge that the data set size will not change will aid performance
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(adapter);
     }
 
     /**
@@ -58,8 +59,7 @@ public class SearchFragment extends Fragment {
             if (getView() != null) {
                 AwardsResponse awardsResponse = new Gson().fromJson(response, AwardsResponse.class);
                 List<Award> awards = awardsResponse.getResponse().getAward();
-                SearchResultsAdapter adapter = new SearchResultsAdapter(awards);
-                ((RecyclerView) getView().findViewById(R.id.results_list)).setAdapter(adapter);
+                adapter.setResults(awards);
             }
         }
     };

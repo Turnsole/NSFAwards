@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dip">
+    android:padding="10dip"
+    android:foreground="?android:windowContentOverlay">
 
     <android.support.v7.widget.CardView
         android:id="@+id/summary_card"
@@ -23,15 +23,29 @@
 
             <TextView
                 android:id="@+id/summary_year"
+                android:gravity="right"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="in 2015" />
+                android:textSize="20sp"
+                android:textColor="@color/primary_blue"
+                tools:text="To date, in 2015" />
+
+            <TextView
+                android:id="@+id/summary_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/material_blue_grey_800"
+                android:textStyle="bold"
+                tools:text="the National Science Foundation has awarded" />
 
             <TextView
                 android:id="@+id/summary_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="$2,000,000.00 awarded" />
+                android:textSize="25sp"
+                android:textColor="@color/accent_gold"
+                tools:text="$2,000,000.00" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
-</LinearLayout>
+</FrameLayout>

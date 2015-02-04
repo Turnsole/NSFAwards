@@ -11,6 +11,8 @@ import com.lastminutedevice.nsfawards.models.Award;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -19,11 +21,7 @@ import java.util.Locale;
  */
 public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdapter.ResultsHolder> {
     private final static NumberFormat dollarFormat = DecimalFormat.getCurrencyInstance(Locale.US);
-    private List<Award> awards;
-
-    public SearchResultsAdapter(List<Award> awards) {
-        this.awards = awards;
-    }
+    private final List<Award> awards = new ArrayList<Award>();
 
     @Override
     public void onBindViewHolder(SearchResultsAdapter.ResultsHolder viewHolder, int position) {
@@ -59,5 +57,11 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
         public ResultsHolder(View view) {
             super(view);
         }
+    }
+
+    public void setResults(List<Award> newList) {
+        awards.clear();
+        awards.addAll(newList);
+        notifyDataSetChanged();
     }
 }

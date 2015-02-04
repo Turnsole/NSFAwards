@@ -22,6 +22,7 @@ import com.lastminutedevice.nsfawards.fragments.SummaryFragment;
 
 public class HomeActivity extends ActionBarActivity {
     private ActionBarDrawerToggle drawerToggle;
+
     private AboutFragment aboutFragment = new AboutFragment();
     private SearchFragment searchFragment = new SearchFragment();
     private SummaryFragment summaryFragment = new SummaryFragment();
@@ -31,7 +32,9 @@ public class HomeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Use a Toolbar for the ActionBar
         setSupportActionBar((Toolbar) findViewById(R.id.about_toolbar));
+
         getSupportActionBar().setTitle(getString(R.string.app_name));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

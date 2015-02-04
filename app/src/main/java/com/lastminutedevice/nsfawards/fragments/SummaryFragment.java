@@ -22,7 +22,8 @@ public class SummaryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // todo: request
-        ((TextView) view.findViewById(R.id.summary_year)).setText("in 2015");
-        ((TextView) view.findViewById(R.id.summary_total)).setText("$2,000,000 awarded");
+        ((TextView) view.findViewById(R.id.summary_year)).setText("to date in 2015");
+        ((TextView) view.findViewById(R.id.summary_description)).setText("the National Science Foundation has awarded");
+        ((TextView) view.findViewById(R.id.summary_total)).setText("$2,306,248");
     }
 }

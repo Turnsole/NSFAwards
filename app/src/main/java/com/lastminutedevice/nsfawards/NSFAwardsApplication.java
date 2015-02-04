@@ -9,24 +9,21 @@ import com.android.volley.toolbox.Volley;
  * Maintains the request queue.
  */
 public class NSFAwardsApplication extends Application {
-    private static NSFAwardsApplication sInstance;
-
-    private RequestQueue mRequestQueue;
+    private static NSFAwardsApplication instance;
+    private RequestQueue requestQueue;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        mRequestQueue = Volley.newRequestQueue(this);
-
-        sInstance = this;
+        requestQueue = Volley.newRequestQueue(this);
+        instance = this;
     }
 
     public synchronized static NSFAwardsApplication getInstance() {
-        return sInstance;
+        return instance;
     }
 
     public RequestQueue getRequestQueue() {
-        return mRequestQueue;
+        return requestQueue;
     }
 }
