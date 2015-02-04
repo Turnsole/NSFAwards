@@ -1,0 +1,16 @@
+<resources>
+    <style name="AwardTheme" parent="Theme.AppCompat.Light.NoActionBar"> </style>
+
+    <style name="AwardTheme.App" parent="AwardTheme">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/accent_gold</item>
+    </style>
+
+    <style name="DrawerLink">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">10dip</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

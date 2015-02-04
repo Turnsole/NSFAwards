@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/summary_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip">
+
+            <TextView
+                android:id="@+id/summary_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="in 2015" />
+
+            <TextView
+                android:id="@+id/summary_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="$2,000,000.00 awarded" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

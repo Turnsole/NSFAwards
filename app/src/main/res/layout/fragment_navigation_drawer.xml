@@ -1,0 +1,22 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#cccc"
+    android:paddingTop="50dip"
+    tools:context=".NavigationDrawerFragment">
+    <TextView
+        android:text="@string/link_home"
+        android:id="@+id/home_drawer"
+        style="@style/DrawerLink"/>
+    <TextView
+        android:text="@string/link_about"
+        android:id="@+id/about_drawer"
+        style="@style/DrawerLink"/>
+    <TextView
+        android:text="@string/link_search"
+        android:id="@+id/search_drawer"
+        style="@style/DrawerLink"/>
+</LinearLayout>
