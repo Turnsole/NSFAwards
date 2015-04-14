@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:textColor="@color/primary_blue"
+                android:textColor="@color/primary_dark"
                 tools:text="To date, in 2015" />
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textColor="@color/accent_gold"
+                android:textColor="@color/accent"
                 tools:text="$2,000,000.00" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
