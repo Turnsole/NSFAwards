@@ -28,6 +28,7 @@ import java.util.List;
 public class SearchFragment extends Fragment {
     private final SearchResultsAdapter adapter = new SearchResultsAdapter();
     private final String searchUrl = "http://api.nsf.gov/services/v1/awards.json?keyword=";
+    private View emptyView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,6 +42,8 @@ public class SearchFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.results_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
+
+        emptyView = view.findViewById(R.id.empty_message);
     }
 
     /**
@@ -59,7 +62,13 @@ public class SearchFragment extends Fragment {
             if (getView() != null) {
                 AwardsResponse awardsResponse = new Gson().fromJson(response, AwardsResponse.class);
                 List<Award> awards = awardsResponse.getResponse().getAward();
-                adapter.setResults(awards);
+                if (awards.size() > 0) {
+                    emptyView.setVisibility(View.GONE);
+                    adapter.setResults(awards);
+                    getView().findViewById(R.id.results_list).invalidate();
+                } else {
+                   emptyView.setVisibility(View.VISIBLE);
+                }
             }
         }
     };

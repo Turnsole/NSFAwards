@@ -40,8 +40,11 @@ public class HomeActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setElevation(10f); // Only has effect on 5.0+.
 
+        // DrawerLayout is support v4 widget.
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
+        // ActionBarToggle is also a support v4 widget.
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(drawerToggle);
 
@@ -53,7 +56,7 @@ public class HomeActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.about, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         searchView.setQueryHint("keyword");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -66,6 +69,14 @@ public class HomeActivity extends ActionBarActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
+                loadFragment(searchFragment);
+                return false;
+            }
+        });
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                MenuItemCompat.collapseActionView(searchItem);
                 return false;
             }
         });

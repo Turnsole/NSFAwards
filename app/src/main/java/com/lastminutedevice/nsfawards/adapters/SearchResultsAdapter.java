@@ -12,7 +12,6 @@ import com.lastminutedevice.nsfawards.models.Award;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -34,7 +33,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
 
     @Override
     public int getItemCount() {
-        return awards == null ? 0 : awards.size();
+        return awards.size();
     }
 
     @Override

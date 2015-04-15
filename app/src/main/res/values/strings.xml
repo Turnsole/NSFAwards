@@ -10,5 +10,6 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="about_message">Search grants awarded by the National Science Foundation. Data available through http://catalog.data.gov/dataset.</string>
+    <string name="search_empty_message">No results. Use the toolbar to search.</string>
 
 </resources>
